@@ -9,4 +9,6 @@ body {
     height: 700px;
     flex: 0 0 auto;
     border: solid black 2px;
+    display: flex;
+    flex-wrap: wrap;
 }
