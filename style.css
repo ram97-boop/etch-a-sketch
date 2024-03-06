@@ -5,6 +5,13 @@ body {
     align-items: center;
 }
 
+#buttonNew {
+    padding: 10px 15px;
+    background-color: white;
+    border: solid black 1px;
+    margin-bottom: 10px;
+}
+
 #container {
     width: 700px;
     height: 700px;
