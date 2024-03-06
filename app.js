@@ -21,12 +21,19 @@ container.addEventListener("mouseover", (event) => {
         target.className = "inked-square";
 });
 
-// const button = document.getElementsById("buttonNew");
-// button.addEventListener("clicked", () => {
-//     const squaresPerSide = parseInt(prompt("Number of squares per side: "));
+const button = document.getElementById("buttonNew");
+button.addEventListener("click", () => {
+    let squaresPerSide = parseInt(
+        prompt("Number of squares per side (max. 100): ")
+    );
 
-//     createSquares(squaresPerSide);
-// })
+    if (squaresPerSide > 100) {
+        squaresPerSide = 100;
+    }
+
+    clearContainer(document.getElementById("container"));
+    createSquares(squaresPerSide);
+})
 
 function clearContainer(container) {
     while (container.lastElementChild) {
