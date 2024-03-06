@@ -14,12 +14,18 @@ function createSquares(nrSquared) {
 }
 
 const container = document.getElementById("container");
-
 container.addEventListener("mouseover", (event) => {
     const target = event.target;
 
     if (target.id !== "container") // if target is one of the squares
         target.className = "inked-square";
 });
+
+// const button = document.getElementsById("buttonNew");
+// button.addEventListener("clicked", () => {
+//     const squaresPerSide = parseInt(prompt("Number of squares per side: "));
+
+//     createSquares(squaresPerSide);
+// })
 
 createSquares(16);
