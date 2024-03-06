@@ -28,4 +28,10 @@ container.addEventListener("mouseover", (event) => {
 //     createSquares(squaresPerSide);
 // })
 
+function clearContainer(container) {
+    while (container.lastElementChild) {
+        container.removeChild(container.lastElementChild);
+    }
+}
+
 createSquares(16);
