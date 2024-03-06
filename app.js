@@ -17,7 +17,7 @@ function createSquares(nrSquared) {
 CONTAINER.addEventListener("mouseover", (event) => {
     const target = event.target;
 
-    if (target.id !== "container") // if target is one of the squares
+    if (target.id !== "container") // i.e. if target is one of the squares
         target.className = "inked-square";
 });
 
