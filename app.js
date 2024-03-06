@@ -1,6 +1,7 @@
 const CONTAINER_SIDE_LENGTH = 700; // px
 const CONTAINER = document.getElementById("container");
 const SQUARES_LIMIT = 100;
+const STARTING_SQUARES = 16;
 
 // create (nrSquared x nrSquared) squares in the container.
 function createSquares(nrSquared) {
@@ -11,6 +12,12 @@ function createSquares(nrSquared) {
         square.style.minWidth = `${squareWidth}px`;
 
         CONTAINER.appendChild(square);
+    }
+}
+
+function clearContainer() {
+    while (CONTAINER.lastElementChild) {
+        CONTAINER.removeChild(CONTAINER.lastElementChild);
     }
 }
 
@@ -48,10 +55,4 @@ button.addEventListener("click", () => {
     createSquares(squaresPerSide);
 })
 
-function clearContainer() {
-    while (CONTAINER.lastElementChild) {
-        CONTAINER.removeChild(CONTAINER.lastElementChild);
-    }
-}
-
-createSquares(16);
+createSquares(STARTING_SQUARES);
