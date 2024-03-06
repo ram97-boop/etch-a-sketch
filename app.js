@@ -14,11 +14,24 @@ function createSquares(nrSquared) {
     }
 }
 
+function getRandomInt(max) {
+    return Math.floor(Math.random() * max);
+}
+
 CONTAINER.addEventListener("mouseover", (event) => {
     const target = event.target;
+    let style = target.style;
 
-    if (target.id !== "container") // i.e. if target is one of the squares
-        target.className = "inked-square";
+    // i.e. if target is one of the squares, and hasn't been colored yet.
+    if (target.id !== "container" && style.backgroundColor === "") {
+
+        let red = getRandomInt(256); // random number between 0-255
+        let green = getRandomInt(256);
+        let blue = getRandomInt(256);
+
+        style.backgroundColor = `rgb(${red} ${green} ${blue})`;
+    }
+
 });
 
 const button = document.getElementById("buttonNew");
