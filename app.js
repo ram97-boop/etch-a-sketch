@@ -30,15 +30,30 @@ CONTAINER.addEventListener("mouseover", (event) => {
     let style = target.style;
 
     // i.e. if target is one of the squares, and hasn't been colored yet.
-    if (target.id !== "container" && style.backgroundColor === "") {
+    if (target.id !== "container") {
+        if (style.backgroundColor === "") {
 
-        let red = getRandomInt(256); // random number between 0-255
-        let green = getRandomInt(256);
-        let blue = getRandomInt(256);
+            let red = getRandomInt(256); // random number between 0-255
+            let green = getRandomInt(256);
+            let blue = getRandomInt(256);
 
-        style.backgroundColor = `rgb(${red} ${green} ${blue})`;
+            style.backgroundColor = `rgb(${red} ${green} ${blue})`;
+        }
+        else {
+            const filterStrLength = style.filter.length;
+            let brightness =
+                parseFloat(style.filter.slice(11, filterStrLength - 1));
+
+            if (isNaN(brightness)) {
+                brightness = 0.9;
+            }
+            else {
+                brightness -= 0.1;
+            }
+
+            style.filter = `brightness(${brightness})`;
+        }
     }
-
 });
 
 const button = document.getElementById("buttonNew");
