@@ -47,7 +47,7 @@ CONTAINER.addEventListener("mouseover", (event) => {
             if (isNaN(brightness)) {
                 brightness = 0.9;
             }
-            else {
+            else if (brightness > 0) {
                 brightness -= 0.1;
             }
 
